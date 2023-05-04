@@ -66,11 +66,11 @@ class Dog(models.Model):
                               ('M', 'Male'), ('F', 'Female')])
 
     def __str__(self):
-        return f "{self.user.username}'s dog {self.dog_name}"
+        return f"{self.user.username}'s dog {self.dog_name}"
 
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
@@ -95,11 +95,11 @@ class Feedback(models.Model):
     def __str__(self):
         return f"{self.author.username}'s Feedback for booking {self.booking.id}"
 
-    # Django save method to save an instance of the user's feedback to the database
-    def save(self. *args, **kwargs):
-        super(Feedback, self).save(*args, **kwargs)
-        if self.booking.user.email:
-            # replace this with email details once  created
+    # # Django save method to save an instance of the user's feedback to the database
+    # def save(self, *args, **kwargs):
+    #     super(Feedback, self).save(*args, **kwargs)
+    #     if self.booking.user.email:
+    #         # replace this with email details once created
 
 
 class Photo(models.Model):
