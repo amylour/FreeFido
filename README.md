@@ -199,6 +199,8 @@ Business Owner/Django Admin Panel/Superuser
 
 ## Credits
 
+Django save method in models.py (https://docs.djangoproject.com/en/4.2/ref/models/instances/)
+
 ### Code
 ### Media
 ### Additional reading/tutorials/books/blogs
