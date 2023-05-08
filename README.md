@@ -200,6 +200,7 @@ Business Owner/Django Admin Panel/Superuser
 ## Credits
 
 Django save method in models.py (https://docs.djangoproject.com/en/4.2/ref/models/instances/)
+Check if Tailwind is installed (<https://www.w3resource.com/npm/npm-ls-and-npm-cli.php>)
 
 ### Code
 ### Media
