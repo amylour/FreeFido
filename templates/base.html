@@ -14,7 +14,8 @@
     {% endblock %}
 
     {% block corecss %}
-    <link href="../static/dist/output.css" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'dist/output.css' %}" rel="stylesheet">
     {% endblock %}
 
     {% block extra_css %}
@@ -32,14 +33,14 @@
 <body>
     <header></header>
 
-    {% if_messages %}
+    {% if messages %}
     <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
     {% endblock %}
 
-    {% block_content %}
+    {% block content %}
     {% endblock %}
 
     {% block postloadjs %}
