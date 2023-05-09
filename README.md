@@ -30,6 +30,7 @@
     - [Libraries \& Frameworks](#libraries--frameworks)
     - [Tools \& Programs](#tools--programs)
   - [Testing](#testing)
+    - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [Heroku deployment](#heroku-deployment)
     - [Cloudinary API](#cloudinary-api)
@@ -187,6 +188,16 @@ Business Owner/Django Admin Panel/Superuser
 ## Testing
 - TESTING.MD link -> Testing includes bugs/TDD/Python Testing etc/Validation/Linters
 - Security Features and Defensive Design -> Form validation/csrf token/error pages/User Auth
+  
+### Bugs
+
+
+| No. | Bug | Solved | Fix | Solution Credit | Commit no. |
+| --- | ---------------- | ---- | ------------- | -------------- | ------------|
+| 1   |   Tailwind CSS not loading  |    U+2713    | Tailwind config fix, use of STATICFILES_FINDERS to connect static css to settings.py  |  <https://waltercruz.github.io/django-l10n-portuguese/ref/contrib/staticfiles.html>              |   9281779  |
+| 2   |  Tailwind output.css displaying only partial build of 500 lines  |  U+2713  |  used tailwind-cli install to complete build of output.css   |   <https://stackoverflow.com/questions/70337770/tailwindcss-output-css-file-424-lines>, ref for complete build (<https://github.com/VinCoD/tailwind-output-css>)          |     f9db8e7     |
+| 3   | Tailwind not loading    |    U+2713    |  tailwind.config.js, remove curly brackets   |     <https://stackoverflow.com/questions/71070781/tailwind-css-classes-is-not-working-in-my-project>           |     f9db8e7        |
+
 
 
 ## Deployment
@@ -200,7 +211,9 @@ Business Owner/Django Admin Panel/Superuser
 ## Credits
 
 Django save method in models.py (https://docs.djangoproject.com/en/4.2/ref/models/instances/)
-Check if Tailwind is installed (<https://www.w3resource.com/npm/npm-ls-and-npm-cli.php>)
+Check if Tailwind is installed (https://www.w3resource.com/npm/npm-ls-and-npm-cli.php)
+Initial Tailwind configuration (https://tailwindcss.com/docs/installation)
+
 
 ### Code
 ### Media
