@@ -66,4 +66,4 @@ class Dog(models.Model):
                               ('M', 'Male'), ('F', 'Female')])
 
     def __str__(self):
-        return f"{self.user.username}'s dog {self.dog_name}"
+        return f"{self.owner.username}'s dog {self.dog_name}"

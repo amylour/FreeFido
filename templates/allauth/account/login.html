@@ -39,7 +39,7 @@
                 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
             </p>
             {% endif %}
-            <form class="space-y-4 md:space-y-6" action="{% url 'account_login' %}">
+            <form class="space-y-4 md:space-y-6" action="{% url 'profile' %}">
                 {% csrf_token %}
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
