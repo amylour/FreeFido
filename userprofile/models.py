@@ -1,10 +1,12 @@
 from django.db import models
 # Import User model from the Django auth application
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 # Cloudinary import for image storage
 from cloudinary.models import CloudinaryField
 # Validators for user choices in profile and booking
 from django.core.validators import MaxValueValidator, MinValueValidator
+
+User = get_user_model()
 
 
 class UserProfile(models.Model):
@@ -18,7 +20,7 @@ class UserProfile(models.Model):
 
     # method to return a string representation of an object - Django Docs magic method
     def __str__(self):
-        return self.user.username
+        return self.user.email
 
 
 class Dog(models.Model):
