@@ -51,10 +51,16 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'cloudinary',
+    'crispy_forms',
+    'crispy_tailwind',
     'booking',
     'userprofile',
     'photo',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
+
+CRISPY_TEMPLATE_PACK = 'tailwind'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
