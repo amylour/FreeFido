@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
-
+{% load i18n %}
 
 {% block content %}
 
 <h1>This is the profile page</h1>
 
-<p>First Name: {{ user_profile.first_name }}</p>
+<!-- <p>First Name: {{ user_profile.first_name }}</p>
 <p>Last Name: {{ user_profile.last_name }}</p>
 <p>Email: {{ user_profile.email }}</p>
 <p>Phone: {{ user_profile.phone }}</p>
@@ -21,7 +21,7 @@
 <p>Color: {{ dog.color }}</p>
 <p>Vaccinated: {{dog.is_vaccinated }}</p>
 <p>Gender: {{ dog.get_gender_display }}</p>
-{% endfor %}
+{% endfor %} -->
 
 <!-- <label for="breed" class="block mb-2 text-sm font-medium text-grey-900 dark:text-white">Breed</label>
         <select name="breed" id="breed"
