@@ -18,7 +18,7 @@
                 in</a>.{% endblocktrans %}
         </p>
 
-        <form class="space-y-4 md:space-y-6" id="signup_form" method="POST" action="{% url 'create_profile' %}">
+        <form class="space-y-4 md:space-y-6" id="signup_form" method="POST" action="{% url 'account_signup' %}">
             {% csrf_token %}
             {{ form.as_p }}
             {% if redirect_field_value %}

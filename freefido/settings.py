@@ -115,7 +115,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'  # redirect to home page
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_SIGNUP_REDIRECT_URL = 'create_profile/'
+# ACCOUNT_SIGNUP_REDIRECT_URL = 'create_profile/'
 
 WSGI_APPLICATION = 'freefido.wsgi.application'
 
