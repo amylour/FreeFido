@@ -213,6 +213,7 @@ Business Owner/Django Admin Panel/Superuser
 Django save method in models.py (https://docs.djangoproject.com/en/4.2/ref/models/instances/)
 Check if Tailwind is installed (https://www.w3resource.com/npm/npm-ls-and-npm-cli.php)
 Initial Tailwind configuration (https://tailwindcss.com/docs/installation)
+Advanced User Profile creation using allauth/signals (https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
 
 
 ### Code
