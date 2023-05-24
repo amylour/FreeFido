@@ -5,40 +5,41 @@
 
 {% block content %}
 
-<h1>This is the profile page</h1>
-
-<a href="{% url 'create_profile' %}" class="btn btn-primary">Edit Profile</a>
-
-<p>First Name: {{ user_profile.first_name }}</p>
-<p>Last Name: {{ user_profile.last_name }}</p>
-<p>Email: {{ user_profile.email }}</p>
-<p>Phone: {{ user_profile.phone }}</p>
-<p>Profile Picture: {{ user_profile.profile_pic }}</p>
-<p>Created On: {{ user_profile.created_on }}</p>
-
-
-{% for dog in user_profile.dog_set.all %}
-<p>Dog Name: {{ dog.dog_name }}</p>
-<p>Breed: {{ dog.get_breed_display }}</p>
-<p>Color: {{ dog.color }}</p>
-<p>Vaccinated: {{dog.is_vaccinated }}</p>
-<p>Gender: {{ dog.get_gender_display }}</p>
-{% endfor %}
-
-<label for="breed" class="block mb-2 text-sm font-medium text-grey-900 dark:text-white">Breed</label>
-<select name="breed" id="breed"
-    class="bg-gray-50 border border-grey-200 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    required>
-    {% for breed_value, breed_label in dog_breed_choices %}
-    <option value="{{ breed_value }}">{{ breed_label }}</option>
-    {% endfor %}
-</select>
+<div class="flex items-center justify-center mx-auto">
+    <h1 class="m-8 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+        Profile Page</h1>
 </div>
-<p><strong>Color:</strong> {{ dog.color }}</p>
-<p><strong>Is Vaccinated:</strong> {{ userprofile.is_vaccinated }}</p>
-Django functionality to get the fieldnames value
-<p><strong>Gender:</strong> {{ userprofile.get_gender_display }}</p>
-</div>
+<div class="flex flex-col lg:flex-row items-center justify-center mx-auto lg:py-0">
+    <div class="text-center p-6 space-y-4 md:space-y-6 sm:p-8 lg:w-1/2">
+        <p>Profile Picture: {{ user_profile.profile_pic }}</p>
+        <p>First Name: {{ user_profile.first_name }}</p>
+        <p>Last Name: {{ user_profile.last_name }}</p>
+        <p>Email: {{ user_profile.email }}</p>
+        <p>Phone: {{ user_profile.phone }}</p>
+        <p>Created On: {{ user_profile.created_on }}</p>
+
+        {% for dog in user_profile.dog_set.all %}
+        <p>Dog Name: {{ dog.dog_name }}</p>
+        <p>Breed: {{ dog.get_breed_display }}</p>
+        <p>Color: {{ dog.color }}</p>
+        <p>Vaccinated: {{ dog.is_vaccinated }}</p>
+        <p>Gender: {{ dog.get_gender_display }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="text-center p-6 space-y-4 md:space-y-6 sm:p-8 lg:w-1/2">
+        <p>Dog Name: {{ dog.dog_name }}</p>
+        <p>Breed: {{ dog.breed }}</p>
+        <p>Color: {{ dog.color }}</p>
+        <p>Is Vaccinated: {{ userprofile.is_vaccinated }}</p>
+        <!-- Django functionality to get the fieldnames value -->
+        <p>Gender: {{ userprofile.get_gender_display }}</p>
+    </div>
 </div>
 
+<div class="flex items-center justify-center mx-auto">
+    <a href="{% url 'create_profile' %}"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit
+        Profile</a>
+</div>
 {% endblock %}
