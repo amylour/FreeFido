@@ -29,8 +29,8 @@ def profile_view(request):
     #
 
 
-def create_profile(request):
-    """ Create profile for the user upon SignUp """
+def edit_profile(request):
+    """ Edit profile for the user """
 
     user_profile_form = UserProfileForm(request.POST)
     dog_form = DogForm(request.POST)
@@ -52,4 +52,4 @@ def create_profile(request):
         'user_profile_form': user_profile_form,
         'dog_form': dog_form,
     }
-    return render(request, 'create_profile.html', context)
+    return render(request, 'edit_profile.html', context)
