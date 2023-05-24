@@ -1,20 +1,36 @@
 from django.shortcuts import render, redirect
 from allauth.account.views import SignupView
+# from django.contrib.auth.decorators import login_required
 from .models import UserProfile, Dog
 from .forms import UserProfileForm, DogForm
+# from .models import UserProfile, Dog
 
 
 class add_user(SignupView):
     template_name = 'account/signup.html'
 
 
+# @login_required
 def profile_view(request):
     """ A view to return the profile page """
+    # user_profile = UserProfile.objects.get(user=request.user)
+    # dog = Dog.objects.filter(owner=request.user)
+    # dog_breed_choices = dog.BREED_CHOICES
+    # context = {'user_profile': user_profile,
+    #            'dog': dog,
+    #            'dog_breed_choices': dog_breed_choices
+    #            }
     return render(request, 'userprofile/profile.html')
+    # , context
+
+# from django.shortcuts import render, redirect
+
+    # , {'user_profile': user_profile}
+    #
 
 
 def edit_profile(request):
-    """ Edit profile for the user """
+    """ Create profile for the user upon SignUp """
 
     user_profile_form = UserProfileForm(request.POST)
     dog_form = DogForm(request.POST)
