@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import UserProfile, Dog
+from .models import AccountProfile
 
-admin.site.register(UserProfile)
-admin.site.register(Dog)
+
+@admin.register(AccountProfile)
+class AccountProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        'profile_pic',
+        'first_name',
+        'last_name',
+        'phone')
+    list_filter = ('last_name', 'phone')
+    search_fields = ['first_nane', 'last_name', 'phone']

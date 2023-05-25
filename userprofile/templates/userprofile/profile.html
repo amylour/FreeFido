@@ -11,35 +11,15 @@
 </div>
 <div class="flex flex-col lg:flex-row items-center justify-center mx-auto lg:py-0">
     <div class="text-center p-6 space-y-4 md:space-y-6 sm:p-8 lg:w-1/2">
-        <p>Profile Picture: {{ user_profile.profile_pic }}</p>
-        <p>First Name: {{ user_profile.first_name }}</p>
-        <p>Last Name: {{ user_profile.last_name }}</p>
-        <p>Email: {{ user_profile.email }}</p>
-        <p>Phone: {{ user_profile.phone }}</p>
-        <p>Created On: {{ user_profile.created_on }}</p>
-
-        {% for dog in user_profile.dog_set.all %}
-        <p>Dog Name: {{ dog.dog_name }}</p>
-        <p>Breed: {{ dog.get_breed_display }}</p>
-        <p>Color: {{ dog.color }}</p>
-        <p>Vaccinated: {{ dog.is_vaccinated }}</p>
-        <p>Gender: {{ dog.get_gender_display }}</p>
-        {% endfor %}
+        <p>Profile Picture: {{ account_profile.profile_pic }}</p>
+        <p>First Name: {{ account_profile.first_name }}</p>
+        <p>Last Name: {{ account_profile.last_name }}</p>
+        <p>Phone: {{ account_profile.phone }}</p>
     </div>
 
-    <div class="text-center p-6 space-y-4 md:space-y-6 sm:p-8 lg:w-1/2">
-        <p>Dog Name: {{ dog.dog_name }}</p>
-        <p>Breed: {{ dog.breed }}</p>
-        <p>Color: {{ dog.color }}</p>
-        <p>Is Vaccinated: {{ userprofile.is_vaccinated }}</p>
-        <!-- Django functionality to get the fieldnames value -->
-        <p>Gender: {{ userprofile.get_gender_display }}</p>
+    <div class="flex items-center justify-center mx-auto">
+        <a href="{% url 'edit_profile' %}"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit
+            Profile</a>
     </div>
-</div>
-
-<div class="flex items-center justify-center mx-auto">
-    <a href="{% url 'edit_profile' %}"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit
-        Profile</a>
-</div>
-{% endblock %}
+    {% endblock %}

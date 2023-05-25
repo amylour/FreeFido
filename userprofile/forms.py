@@ -1,14 +1,9 @@
 from django import forms
-from .models import UserProfile, Dog
+from .models import AccountProfile
 
 
-class UserProfileForm(forms.ModelForm):
+class AccountProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = ['first_name', 'last_name', 'email', 'phone', 'profile_pic']
-
-
-class DogForm(forms.ModelForm):
-    class Meta:
-        model = Dog
-        fields = ['dog_name', 'breed', 'color', 'is_vaccinated', 'gender']
+        model = AccountProfile
+        fields = ['profile_pic', 'first_name',
+                  'last_name', 'phone']
