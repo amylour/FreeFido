@@ -7,6 +7,13 @@ from .forms import AccountProfileForm
 class add_user(SignupView):
     template_name = 'account/signup.html'
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        AccountProfile.objects.create(user=self.user)
+
+        return response
+
 
 def profile_view(request):
     """ A view to return the profile page """
